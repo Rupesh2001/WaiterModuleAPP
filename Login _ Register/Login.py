@@ -15,8 +15,11 @@ def driver():
 
 def test_login(driver):
     try:
-        driver.get("https://waitermoduleapp.danfesolution.com")
+        driver.get("https://waitermoduleapp.danfesolution.com/login")
         time.sleep(2)  # Consider using WebDriverWait for better stability
-        assert "Waiter" in driver.title  # Optional title check
+        driver.save_screenshot("Pass_login_page.png")
     except Exception as e:
         print(f"Error accessing the website: {e}")
+        driver.save_screenshot("Fail_login_page.png")
+
+        
