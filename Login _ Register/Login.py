@@ -36,17 +36,36 @@ def test_login(driver):
         submit = driver.find_element(By.XPATH,"//div[@class='p-2 py-4']//button[@type='submit'][normalize-space()='Sign In']")
         submit.click()
         time.sleep(5)
-        Toggle_msg = driver.find_element(By.XPATH,"//div[@role='status']")
-        color = Toggle_msg.value_of_css_property("color")
-        if "rgb(0, 128, 0)" in color or "green" in color:
-             print("success")
-        elif "rgb(255, 0, 0)" in color or "red" in color:
-             print("not success")
+        if driver.current_url == "https://waitermoduleapp.danfesolution.com/pos":
+            print("Login successful, redirected to dashboard.")
         else:
-            print("Unknown color:", color)
+            print("Login failed, not redirected to dashboard.")
 
     except Exception as e:
         print(f"Error accessing the website: {e}")
         # driver.save_screenshot("Fail_login_page.png")
+def test_loginValid(driver):
+    try:
+        driver.get("https://waitermoduleapp.danfesolution.com/login")
+        time.sleep(5)
+        faker = Faker()
+        email = driver.find_element(By.XPATH,"//div[@class='p-2 py-4']//input[@placeholder='Enter email']")
+        email.send_keys("rupesh@restroorder.com")
+        time.sleep(2)
+        password = driver.find_element(By.XPATH,"//div[@class='p-2 py-4']//input[@placeholder='Enter Password']")
+        password.send_keys("9876543210")
+        time.sleep(2)
+        Remember_me = driver.find_element(By.XPATH,"//div[@class='d-flex justify-content-between mb-4']//input[@id='auth-remember-check']")
+        remember_me = Remember_me.is_selected()
+        if not remember_me:
+            Remember_me.click()
+        submit = driver.find_element(By.XPATH,"//div[@class='p-2 py-4']//button[@type='submit'][normalize-space()='Sign In']")
+        submit.click()
+        time.sleep(5)
+        if driver.current_url == "https://waitermoduleapp.danfesolution.com/pos":
+            print("Login successful, redirected to dashboard.")
+        
 
+    except Exception as e:
+        print(f"Error accessing the website: {e}")
         
