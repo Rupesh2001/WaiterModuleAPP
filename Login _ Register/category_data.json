@@ -1,0 +1,13 @@
+
+{
+        "id": "",
+        "name": "Food",
+        "description": "Food",
+        "isHidden": false,
+        "categoryPosition": 1,
+        "costCenterId": 2,
+        "isActive": true,
+        "imageName": "",
+        "imagePath": ""
+}
+
