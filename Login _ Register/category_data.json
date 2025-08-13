@@ -1,8 +1,8 @@
 
 {
         "id": "",
-        "name": "Food",
-        "description": "Food",
+        "name": "Bar",
+        "description": "Bar",
         "isHidden": false,
         "categoryPosition": 1,
         "costCenterId": 2,

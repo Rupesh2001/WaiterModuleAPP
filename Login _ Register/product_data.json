@@ -1,0 +1,30 @@
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "tags": "string",
+  "images": "string",
+  "categoryId": 0,
+  "isMenuDisplay": true,
+  "unitId": 0,
+  "isHidden": true,
+  "isProductSoldOut": true,
+  "attributes": [
+    {
+      "id": 0,
+      "title": "string",
+      "value": 0,
+      "isActive": true
+    }
+  ],
+  "children": [
+    {
+      "id": 0,
+      "childProductId": 0,
+      "name": "string",
+      "price": 0,
+      "choices": 0,
+      "description": "string"
+    }
+  ]
+}
